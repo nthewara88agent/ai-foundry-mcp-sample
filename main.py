@@ -115,8 +115,8 @@ Always cite the source URLs when providing information from documentation.""",
         print(f"\n✅ Created agent: {agent.id}")
         print(f"   Model: {MODEL_DEPLOYMENT_NAME}")
         
-        # Run the conversation
-        user_question = "What is Azure Functions and how do I create my first Python function? Give me a brief overview and code example."
+        # Run the conversation - explicitly ask to use Microsoft Learn
+        user_question = "Use the microsoft_docs_search tool to search Microsoft Learn documentation for 'Azure Functions Python quickstart'. Summarize what you find."
         
         print(f"\n{'='*60}")
         print(f"💬 User: {user_question}")
