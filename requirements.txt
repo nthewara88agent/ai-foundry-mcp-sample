@@ -1,4 +1,5 @@
-azure-ai-projects>=1.0.0b14
-azure-ai-agents>=1.2.0b6
-azure-identity>=1.15.0
+# Azure AI Agent - Microsoft Agent Framework with MCP
+
+agent-framework>=1.0.0b260130
 python-dotenv>=1.0.0
+azure-identity>=1.19.0
