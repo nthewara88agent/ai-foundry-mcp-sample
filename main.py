@@ -210,12 +210,11 @@ Always cite the source URLs when providing information from documentation.""",
             
             print("\n" + "-"*60)
         
-        # Clean up
-        print(f"\n🧹 Cleaning up...")
-        agents_client.threads.delete(thread_id=thread.id)
-        print(f"   Deleted thread: {thread.id}")
-        agents_client.delete_agent(agent.id)
-        print(f"   Deleted agent: {agent.id}")
+        # Keep agent and thread for inspection in portal
+        print(f"\n📌 Resources preserved for inspection:")
+        print(f"   Agent ID: {agent.id}")
+        print(f"   Thread ID: {thread.id}")
+        print(f"   View in portal: https://ai.azure.com")
     
     print("\n✅ Sample completed successfully!")
 
