@@ -49,7 +49,15 @@ def get_or_create_agent(agents_client, mcp_tool):
     Returns the agent instance.
     """
     # List existing agents and find by name
-    agents = list(agents_client.list_agents())
+    # Handle different SDK versions (list_agents vs get_agents)
+    try:
+        agents = list(agents_client.list_agents())
+    except AttributeError:
+        # Older SDK version uses get_agents or different method
+        try:
+            agents = list(agents_client.get_agents())
+        except AttributeError:
+            agents = []
     for agent in agents:
         if agent.name == AGENT_NAME:
             print(f"📌 Using existing agent: {agent.id}")
